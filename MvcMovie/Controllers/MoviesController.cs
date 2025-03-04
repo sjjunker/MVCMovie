@@ -20,8 +20,10 @@ namespace MvcMovie.Controllers
         }
 
     // GET: Movies
-    public async Task<IActionResult> Index(string movieGenre, string searchString)
+    public async Task<IActionResult> Index(string movieGenre, string searchString, string sortOrder)
     {
+        ViewData["DateSortParm"] = sortOrder == "Date" ? "date_desc" : "Date";
+
         if (_context.Movie == null)
         {
             return Problem("Entity set 'MvcMovieContext.Movie'  is null.");
@@ -45,10 +47,23 @@ namespace MvcMovie.Controllers
             movies = movies.Where(x => x.Genre == movieGenre);
         }
 
+        switch (sortOrder)
+        {
+            case "Date":
+                movies = movies.OrderBy(m => m.ReleaseDate);
+                break;
+            case "date_desc":
+                movies = movies.OrderByDescending(m => m.ReleaseDate);
+                break;
+            default:
+                movies = movies.OrderBy(m => m.Id);
+                break;
+        }
+
         var movieGenreVM = new MovieGenreViewModel
         {
             Genres = new SelectList(await genreQuery.Distinct().ToListAsync()),
-            Movies = await movies.ToListAsync()
+            Movies = await movies.AsNoTracking().ToListAsync()
         };
 
         return View(movieGenreVM);
