@@ -8,7 +8,11 @@ html {
   }
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
@@ -21,11 +25,41 @@ body {
   margin-bottom: 60px;
 }
 
-.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+.form-floating > .form-control-plaintext::placeholder,
+.form-floating > .form-control::placeholder {
   color: var(--bs-secondary-color);
   text-align: end;
 }
 
-.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+.form-floating > .form-control-plaintext:focus::placeholder,
+.form-floating > .form-control:focus::placeholder {
   text-align: start;
+}
+
+img {
+  width: 100px;
+  height: auto;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  box-shadow: 5px 5px 1px 1px lavenderblush;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+  background-color: midnightblue;
+  color: white;
+  border-radius: 1rem;
+  padding: 0.5rem;
+}
+
+a:hover {
+  text-decoration: none;
+  background-color: goldenrod;
+  color: black;
+}
+
+.table-striped > tbody > tr:nth-child(odd) > td,
+.table-striped > tbody > tr:nth-child(odd) > th {
+  background-color: rgba(218, 165, 32, 0.424); // Choose your own color here
 }
