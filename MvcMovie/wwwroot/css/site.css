@@ -23,6 +23,11 @@ html {
 
 body {
   margin-bottom: 60px;
+  background: linear-gradient(
+    132deg,
+    rgb(227, 244, 253) 0%,
+    rgb(170, 209, 226) 100%
+  );
 }
 
 .form-floating > .form-control-plaintext::placeholder,
@@ -61,5 +66,15 @@ a:hover {
 
 .table-striped > tbody > tr:nth-child(odd) > td,
 .table-striped > tbody > tr:nth-child(odd) > th {
-  background-color: rgba(218, 165, 32, 0.424); // Choose your own color here
+  background-color: aliceblue;
+}
+
+hr {
+  height: 10px;
+  border: 0;
+  box-shadow: 0 10px 10px -10px goldenrod inset;
+}
+
+.editSave-buttons {
+  margin-top: 1rem;
 }
