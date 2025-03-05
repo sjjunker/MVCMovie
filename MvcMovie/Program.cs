@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
 using MvcMovie.Data;
 using MvcMovie.Models;
 var builder = WebApplication.CreateBuilder(args);
@@ -34,6 +35,13 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapStaticAssets();
+
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images")),
+    RequestPath = "/images"
+});
+
 
 app.MapControllerRoute(
     name: "default",

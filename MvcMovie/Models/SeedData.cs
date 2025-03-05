@@ -26,7 +26,8 @@ public static class SeedData
                     ReleaseDate = DateTime.Parse("2004-01-08"),
                     Genre = "Comedy",
                     Price = 4.99M,
-                    Rating = "PG"
+                    Rating = "PG",
+                    Image = "home-teacher.webp"
                 },
                 new Movie
                 {
@@ -34,7 +35,8 @@ public static class SeedData
                     ReleaseDate = DateTime.Parse("2015-06-04"),
                     Genre = "Drama",
                     Price = 9.99M,
-                    Rating = "PG-13"
+                    Rating = "PG-13",
+                    Image = "cokeville.webp"
                 },
                 new Movie
                 {
@@ -42,7 +44,8 @@ public static class SeedData
                     ReleaseDate = DateTime.Parse("2003-03-24"),
                     Genre = "Action",
                     Price = 9.99M,
-                    Rating = "PG-13"
+                    Rating = "PG-13",
+                    Image = "soldiers.webp"
                 },
                 new Movie
                 {
@@ -50,7 +53,8 @@ public static class SeedData
                     ReleaseDate = DateTime.Parse("2007-12-10"),
                     Genre = "Romantic Comedy",
                     Price = 4.99M,
-                    Rating = "PG"
+                    Rating = "PG",
+                    Image = "singles-2.webp"
                 },
                 new Movie
                 {
@@ -58,7 +62,8 @@ public static class SeedData
                     ReleaseDate = DateTime.Parse("2014-02-25"),
                     Genre = "Documentary",
                     Price = 4.99M,
-                    Rating = "PG"
+                    Rating = "PG",
+                    Image = "mormons.webp"
                 },
                 new Movie
                 {
@@ -66,7 +71,8 @@ public static class SeedData
                     ReleaseDate = DateTime.Parse("2015-03-02"),
                     Genre = "Family",
                     Price = 9.99M,
-                    Rating = "TV-Y7"
+                    Rating = "TV-Y7",
+                    Image = "vt-noah.webp"
                 }
             );
             context.SaveChanges();
